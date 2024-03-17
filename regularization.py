@@ -1,3 +1,14 @@
+"""
+:author:
+    Naiara Korta Martiartu (naiara.korta@unibe.ch)
+
+    University of Bern
+    2021 - 2024
+
+:license:
+    GPL-3.0
+"""
+
 import numpy as np
 from scipy.sparse import diags
 from scipy.linalg import inv, norm
