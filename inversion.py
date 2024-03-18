@@ -39,6 +39,7 @@ def inversion(data, forward_op, nx, nz, c0, reg_parameter=1e-3, order=0, gpu=Fal
     :param c0: assumed speed of sound [scalar]
     :param reg_parameter: regularization parameter [positive scalar]
     :param order: order of Tikhonov regularization [integer, supported: 0, 1, or 2]
+    :param gpu: use gpu? [boolean]
     :return delta_rec: reconstructed slowness deviation [numpy array, nz*nx x 1]
             sos: reconstructed speed of sound [numpy array, nz*nx x 1]
     """
@@ -130,6 +131,7 @@ def plot_lcurve(data, forward_op, nx, nz, c0, order=0, gpu=False, reg_params=Non
     number of transducer elements. For each element, the submatrix is composed of the weights of line
                                   integrals (ray paths)  [compressed Sparse Row matrix, nx*nz x nx*nz]
     :param order: order of Tikhonov regularization [integer, supported: 0, 1, or 2]
+    :param gpu: use gpu? [boolean]
     :param reg_params: list with regularization parameter values. If None, take default ones. [list floats]
     :param reg_anis_ratio:  Ratio between reg. parameter values in x- and z-direction. The value in z is
                                 multiplied by this value [float]
