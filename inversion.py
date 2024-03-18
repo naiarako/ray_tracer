@@ -76,7 +76,7 @@ def inversion(data, forward_op, nx, nz, c0, reg_parameter=1e-3, order=0, gpu=Fal
                               nz=nz, hessian=hessian, gpu=gpu)
 
         # Reconstruct model parameters:
-        delta_rec = cp.dot(post, grad)
+        delta_rec = cp.asnumpy(cp.dot(post, grad))
 
         # reconstructed speed of sound:
         sos = c0 / (c0 * delta_rec + 1)
