@@ -79,9 +79,6 @@ def inversion(data, forward_op, nx, nz, c0, reg_parameter=1e-3, order=0, gpu=Fal
         delta_rec = cp.dot(post, grad)
 
         # reconstructed speed of sound:
-        delta_rec = cp.asnumpy(self.delta_rec)
-
-        # reconstructed speed of sound:
         sos = c0 / (c0 * delta_rec + 1)
 
     else:  # in CPU
